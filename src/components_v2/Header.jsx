@@ -1,5 +1,6 @@
 // Header.js
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [activeDropdownIndex, setActiveDropdownIndex] = useState(null);
@@ -276,10 +277,10 @@ const Header = () => {
   return (
     <header style={styles.header}>
       <div style={styles.headerContainer}>
-        <a href="/" style={styles.logo}>
+        <Link href="/" style={styles.logo}>
           <div style={styles.logoIcon}>E</div>
           Company Name
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav style={{...styles.navDesktop, display: isMobile ? 'none' : 'flex'}}>
