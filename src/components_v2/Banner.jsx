@@ -70,7 +70,7 @@ const Banner = ({ image, title, description }) => {
     },
   };
 
-  const reliableImage = image || "/photo-1486325212027-8081e485255e.png";
+  const reliableImage = image || "./photo-1486325212027-8081e485255e.png";
 
   return (
     <div style={styles.container}>

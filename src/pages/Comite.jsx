@@ -88,7 +88,7 @@ const Comite = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1556761175-b413da4baf72.jpeg"
+          image="./photo-1556761175-b413da4baf72.jpeg"
           title="Comités del Consejo"
           description="Estructura especializada para una gestión sólida y transparente"
         />
@@ -145,7 +145,7 @@ const Comite = () => {
               {/* 右列 - 图片 */}
               <div style={styles.rightColumn}>
                 <img 
-                  src="/photo-1577962917302-cd874c4e31d2.jpeg"
+                  src="./photo-1577962917302-cd874c4e31d2.jpeg"
                   alt="Comité de Auditoría"
                   style={styles.sideImage}
                 />

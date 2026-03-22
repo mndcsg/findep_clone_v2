@@ -74,7 +74,7 @@ const Plot = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1611974789855-9c2a0a7236a3.jpeg"
+          image="./photo-1611974789855-9c2a0a7236a3.jpeg"
           title="Gráfica Histórica"
           description="Evolución y datos clave de la acción en tiempo real"
         />
@@ -86,7 +86,7 @@ const Plot = () => {
           <div style={styles.toggleWrapper}>
             <ToggleSection 
               items={menuItems}
-              initialPath="/accion/grafica-historica"
+              initialPath="#/accion/grafica-historica"
             />
           </div>
           

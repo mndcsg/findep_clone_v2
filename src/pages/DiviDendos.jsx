@@ -96,7 +96,7 @@ const DiviDendos = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1611974789855-9c2a0a7236a3.jpeg"
+          image="./photo-1611974789855-9c2a0a7236a3.jpeg"
           title="Información de la Acción y Dividendos"
           description="Datos actualizados de la acción, rentabilidad y pagos de dividendos para inversionistas."
         />

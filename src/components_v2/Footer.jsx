@@ -3,10 +3,10 @@ import React from 'react';
 // --- Footer Component ---
 const Footer = () => {
   const footerNavItems = [
-    { label: "Conoce la Empresa", url: "/corporativa/historia" },
-    { label: "Estructura Directiva", url: "/gobierno/equipo-directivo" },
-    { label: "Mercado de Capitales", url: "/accion/grafica-historica" },
-    { label: "Compromiso Social", url: "/responsabilidad-social" }
+    { label: "Conoce la Empresa", url: "#/corporativa/historia" },
+    { label: "Estructura Directiva", url: "#/gobierno/equipo-directivo" },
+    { label: "Mercado de Capitales", url: "#/accion/grafica-historica" },
+    { label: "Compromiso Social", url: "#/responsabilidad-social" }
   ];
 
   const colors = {

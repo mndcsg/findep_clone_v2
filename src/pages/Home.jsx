@@ -14,25 +14,25 @@ const Home = () => {
   // Hero Slider 数据
   const heroSlides = [
     {
-      image: "/photo-1486406146926-c627a92ad1ab.jpeg",
+      image: "./photo-1486406146926-c627a92ad1ab.jpeg",
       subtitle: "Campany Name",
-      path: "/corporativa/perfil",
+      path: "#/corporativa/perfil",
       title: "Líderes en Préstamos Digitales",
       ctaText: "Conoce Más"
     },
     {
-      image: "/photo-1497366216548-37526070297c.jpeg",
+      image: "./photo-1497366216548-37526070297c.jpeg",
       subtitle: "MÁS DE 15 AÑOS",
       title: "Experiencia y Confianza",
-      path: "/corporativa/historia",
+      path: "#/corporativa/historia",
       ctaText: "Nuestra Historia"
     },
     {
-      image: "/photo-1497215728101-856f4ea42174.jpeg",
+      image: "./photo-1497215728101-856f4ea42174.jpeg",
       subtitle: "COMPROMISO",
       title: "Servicios Accesibles y Seguros",
       ctaText: "Explorar Servicios",
-      path:"/gobierno/equipo-directivo"
+      path:"#/gobierno/equipo-directivo"
     }
   ];
 
@@ -230,7 +230,7 @@ const Home = () => {
               Conoce más sobre nuestra historia, gobierno corporativo 
               y compromiso con el desarrollo sostenible de México.
             </p>
-            <Link to="/corporativa/perfil" style={styles.ctaButton}
+            <Link to="#/corporativa/perfil" style={styles.ctaButton}
               onMouseOver={(e) => {
                 e.currentTarget.style.backgroundColor = theme.colors.white;
                 e.currentTarget.style.color = theme.colors.primary;

@@ -35,17 +35,17 @@ const Intro = () => {
     {
       title: 'Proceso Optimizado',
       description: 'Proceso completamente en línea con procedimientos estandarizados y productos cumpliendo todas las normativas vigentes. Optimización continua de la experiencia del usuario.',
-      image: '/photo-1454165804606-c3d57bc86b40.jpeg'
+      image: './photo-1454165804606-c3d57bc86b40.jpeg'
     },
     {
       title: 'Seguridad Inteligente',
       description: 'Sistema inteligente de control de riesgos con IA y tecnología anti-fraude avanzada. Políticas estrictas de seguridad de información.',
-      image: '/photo-1555949963-ff9fe0c870eb.jpeg'
+      image: './photo-1555949963-ff9fe0c870eb.jpeg'
     },
     {
       title: 'Servicio Eficiente',
       description: 'Servicio al cliente rápido y eficiente disponible en múltiples canales. Equipo profesional con soporte 24/7.',
-      image: '/photo-1521791136064-7986c2920216.jpeg'
+      image: './photo-1521791136064-7986c2920216.jpeg'
     }
   ];
 
@@ -125,7 +125,7 @@ const Intro = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1486325212027-8081e485255e.jpeg"
+          image="./photo-1486325212027-8081e485255e.jpeg"
           title="Conócenos"
           description="Sobre Nuestra Empresa"
         />

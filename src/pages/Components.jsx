@@ -97,8 +97,8 @@ const Components = () => {
 
   // 示例数据
   const sliderSlides = [
-    { image: "/photo-1486406146926-c627a92ad1ab.jpeg", title: "Excelencia Empresarial", subtitle: "Innovación", ctaText: "Descubrir Más" },
-    { image: "https://images.unsplash.com/photo-1497366216548-37526070297c", title: "Desarrollo Sostenible", subtitle: "Compromiso", ctaText: "Conocer Más" }
+    { image: "./photo-1486406146926-c627a92ad1ab.jpeg", title: "Excelencia Empresarial", subtitle: "Innovación", ctaText: "Descubrir Más" },
+    { image: "https://images.unsplash.com./photo-1497366216548-37526070297c", title: "Desarrollo Sostenible", subtitle: "Compromiso", ctaText: "Conocer Más" }
   ];
 
   const valueCardsData = [
@@ -125,9 +125,9 @@ const Components = () => {
     { date: "2026", title: "Liderazgo Sostenible", description: "Compromiso renovado con la sostenibilidad y responsabilidad social." }
   ];
   const menuItems = [
-    { label: "Gráfica Histórica", path: "/accion/grafica-historica" },
-    { label: "Información de Dividendos", path: "/accion/precios-historicos" },
-    { label: "Cobertura de Analistas", path: "/accion/analistas" }
+    { label: "Gráfica Histórica", path: "#/accion/grafica-historica" },
+    { label: "Información de Dividendos", path: "#/accion/precios-historicos" },
+    { label: "Cobertura de Analistas", path: "#/accion/analistas" }
   ];
   return (
     <div style={styles.container}>
@@ -180,17 +180,17 @@ const Components = () => {
         <ComponentBlock label="ImageInfoCard">
           <div style={styles.gridContainer}>
             <ImageInfoCard 
-              image="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40" 
+              image="https://images.unsplash.com./photo-1454165804606-c3d57bc86b40" 
               title="Consultoría Estratégica" 
               description="Asesoramiento personalizado para impulsar tu negocio" 
             />
             <ImageInfoCard 
-              image="https://images.unsplash.com/photo-1556761175-5973dc0f32e7" 
+              image="https://images.unsplash.com./photo-1556761175-5973dc0f32e7" 
               title="Gestión de Activos" 
               description="Optimización de recursos para máximo rendimiento" 
             />
             <ImageInfoCard 
-              image="https://images.unsplash.com/photo-1552664730-d307ca884978" 
+              image="https://images.unsplash.com./photo-1552664730-d307ca884978" 
               title="Análisis de Mercado" 
               description="Estudios detallados para decisiones informadas" 
             />

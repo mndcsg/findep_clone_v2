@@ -91,7 +91,7 @@ const Analistas = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1556761175-b413da4baf72.jpeg"
+          image="./photo-1556761175-b413da4baf72.jpeg"
           title="Cobertura de Analistas"
           description="Equipo de análisis financiero"
         />

@@ -11,30 +11,30 @@ const Header = () => {
     {
       label: "Conoce la Empresa",
       links: [
-        { name: "Trayectoria", url: "/corporativa/historia" },
-        { name: "Perfil Institucional", url: "/corporativa/perfil" }
+        { name: "Trayectoria", url: "#/corporativa/historia" },
+        { name: "Perfil Institucional", url: "#/corporativa/perfil" }
       ]
     },
     {
       label: "Estructura Directiva",
       links: [
-        { name: "Alta Dirección", url: "/gobierno/equipo-directivo" },
-        { name: "Consejo de Administración", url: "/gobierno/consejo" },
-        { name: "Comités", url: "/gobierno/comites" }
+        { name: "Alta Dirección", url: "#/gobierno/equipo-directivo" },
+        { name: "Consejo de Administración", url: "#/gobierno/consejo" },
+        { name: "Comités", url: "#/gobierno/comites" }
       ]
     },
     {
       label: "Mercado de Capitales",
       links: [
-        { name: "Gráfica Histórica", url: "/accion/grafica-historica" },
-        { name: "Información de Dividendos", url: "/accion/precios-historicos" },
-        { name: "Cobertura de Analistas", url: "/accion/analistas" }
+        { name: "Gráfica Histórica", url: "#/accion/grafica-historica" },
+        { name: "Información de Dividendos", url: "#/accion/precios-historicos" },
+        { name: "Cobertura de Analistas", url: "#/accion/analistas" }
       ]
     },
     {
       label: "Compromiso Social",
       links: [
-        { name: "Responsabilidad Social", url: "/responsabilidad-social" }
+        { name: "Responsabilidad Social", url: "#/responsabilidad-social" }
       ]
     }
   ];

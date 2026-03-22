@@ -104,7 +104,7 @@ const ManageTeam = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1522071820081-009f0129c71c.jpeg"
+          image="./photo-1522071820081-009f0129c71c.jpeg"
           title="Equipo Directivo"
           description="Liderazgo con experiencia y solidez financiera"
         />

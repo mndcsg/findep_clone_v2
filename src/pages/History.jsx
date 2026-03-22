@@ -126,7 +126,7 @@ const History = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1486325212027-8081e485255e.jpeg"
+          image="./photo-1486325212027-8081e485255e.jpeg"
           title="Nuestra Historia"
           description="Trayectoria y Compromiso Financiero"
         />

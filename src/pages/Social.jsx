@@ -59,7 +59,7 @@ const Social = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1531482615713-2afd69097998.jpeg"
+          image="./photo-1531482615713-2afd69097998.jpeg"
           title="Responsabilidad Social"
           description="Compromiso con México y su Comunidad"
         />

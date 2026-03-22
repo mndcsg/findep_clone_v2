@@ -99,7 +99,7 @@ const BoardMember = () => {
         
         {/* Banner */}
         <Banner 
-          image="/photo-1556761175-b413da4baf72.jpeg"
+          image="./photo-1556761175-b413da4baf72.jpeg"
           title="Consejo de Administración"
           description="Gobierno corporativo con transparencia y compromiso"
         />
