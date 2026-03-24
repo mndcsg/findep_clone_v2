@@ -20,8 +20,7 @@ const Header = () => {
       label: "Estructura Directiva",
       links: [
         { name: "Alta Dirección", url: "#/gobierno/equipo-directivo" },
-        { name: "Consejo de Administración", url: "#/gobierno/consejo" },
-        { name: "Comités", url: "#/gobierno/comites" }
+
       ]
     },
     {
@@ -95,7 +94,7 @@ const Header = () => {
       transition: 'all 0.3s ease',
     },
     headerContainer: {
-      maxWidth: '1200px',
+      maxWidth: '1600px',
       margin: '0 auto',
       padding: '0 24px',
       height: '80px',
@@ -277,9 +276,14 @@ const Header = () => {
   return (
     <header style={styles.header}>
       <div style={styles.headerContainer}>
-        <Link href="/" style={styles.logo}>
-          <div style={styles.logoIcon}>E</div>
-          Company Name
+      <Link to="/" style={styles.logo}>
+        <img src="./pic.jpg" alt="Logo" style={{
+  width: '50px',
+  height: '50px',
+  objectFit: 'contain',
+  borderRadius: '6px',
+}} />
+          Aliado Patrimonial, S.A.P.I. de C.V. SOFOM, E.N.R.
         </Link>
 
         {/* Desktop Navigation */}

@@ -140,7 +140,7 @@ const Intro = () => {
           <WideCard align="center">
             <p style={{ marginBottom: '24px', lineHeight: '1.8' }}>
               Nuestra institución,{' '}
-              <strong style={styles.highlight}>Campany Name</strong>, es{' '}
+              <strong style={styles.highlight}>Aliado Patrimonial</strong>, es{' '}
               <strong style={styles.highlight}>pionera en la industria de préstamos digitales</strong>,
               consolidándose como líder en el ecosistema Fintech.
             </p>

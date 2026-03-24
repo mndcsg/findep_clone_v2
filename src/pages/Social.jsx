@@ -69,13 +69,13 @@ const Social = () => {
           
           {/* 文章内容 */}
           <div style={styles.sectionWrapper}>
-            <WideCard title="Responsabilidad Social de Campany Name" align="left">
+            <WideCard title="Responsabilidad Social de Aliado Patrimonial" align="left">
               
               {/* 段落 1 */}
               <p style={styles.paragraph}>
                 La{' '}
                 <strong style={highlight}>Responsabilidad Social (RS)</strong>{' '}
-                es el eje fundamental de los valores corporativos de Campany Name, orientando todo nuestro trabajo hacia el{' '}
+                es el eje fundamental de los valores corporativos de Aliado Patrimonial, orientando todo nuestro trabajo hacia el{' '}
                 <strong style={highlight}>impacto positivo</strong>{' '}
                 en la vida de nuestros colaboradores, las comunidades donde operamos y la sociedad mexicana en su conjunto. Nuestro compromiso se materializa en acciones concretas, basadas en{' '}
                 <strong style={highlight}>honestidad, compromiso y respeto</strong>{' '}
@@ -110,7 +110,7 @@ const Social = () => {
                 <strong style={highlight}>Tucán, Dame un futuro y Corazón Imparable</strong>{' '}
                 (desde 2019), hemos beneficiado a{' '}
                 <strong style={highlight}>más de 60,000 niños y niñas</strong>{' '}
-                , gracias a las aportaciones de nuestros colaboradores y Grupo company name, demostrando nuestro compromiso con la generación de un futuro más justo para la juventud.
+                , gracias a las aportaciones de nuestros colaboradores y Grupo Aliado Patrimonial, demostrando nuestro compromiso con la generación de un futuro más justo para la juventud.
               </p>
 
               {/* 段落 5 */}
@@ -125,13 +125,7 @@ const Social = () => {
               </p>
 
               {/* 段落 6 */}
-              <p style={{ ...styles.paragraph, marginBottom: 0 }}>
-                Invitamos a conocer en detalle nuestras acciones de responsabilidad social a través de nuestros{' '}
-                <strong style={highlight}>Balances Sociales</strong>{' '}
-                , disponibles en esta página, donde se reflejan todo nuestro compromiso con la sociedad y el{' '}
-                <strong style={highlight}>desarrollo sostenible de México</strong>{' '}
-                .
-              </p>
+             
 
             </WideCard>
           </div>

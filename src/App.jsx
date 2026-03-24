@@ -19,9 +19,6 @@ const App = () => {
       <Route path="/corporativa/historia" element={<History />} />
       <Route path="/gobierno/equipo-directivo" element={<ManageTeam />} />
       <Route path="/corporativa/perfil" element={<Intro />} />
-      <Route path="/components" element={<Components />} />
-      <Route path="/gobierno/consejo" element={<BoardMember />} />
-      <Route path="/gobierno/comites" element={<Comite />} />
       <Route path="/accion/grafica-historica" element={<Plot />} />
       <Route path="/accion/precios-historicos" element={<DiviDendos />} />
       <Route path="/accion/analistas" element={<Analistas />} />

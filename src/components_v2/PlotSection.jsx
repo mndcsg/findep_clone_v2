@@ -267,7 +267,7 @@ const PlotSection = () => {
       {/* 头部信息 */}
       <div style={styles.header}>
         <div style={styles.titleGroup}>
-          <h2 style={styles.title}>Company Name S.A.B. de C.V.</h2>
+          <h2 style={styles.title}>Aliado Patrimonial, S.A.P.I. de C.V., SOFOM, E.N.R.</h2>
           <p style={styles.subtitle}>
             <span style={{width: '8px', height: '8px', backgroundColor: theme.colors.primary, borderRadius: '50%', display: 'inline-block'}}></span>
             Bolsa Mexicana de Valores &nbsp;|&nbsp; Retraso de 20 min

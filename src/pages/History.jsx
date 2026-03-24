@@ -142,7 +142,7 @@ const History = () => {
             <WideCard align="center">
               <p style={{ marginBottom: '24px', lineHeight: '1.8' }}>
                 Desde 2012,{' '}
-                <strong style={{ color: theme.colors.accentOchre }}>Campany Name</strong>{' '}
+                <strong style={{ color: theme.colors.accentOchre }}>Aliado Patrimonial</strong>{' '}
                 ha evolucionado con estrategia clara,{' '}
                 <strong style={{ color: theme.colors.accentOchre }}>priorizando calidad, solidez y transformación digital</strong>.
               </p>

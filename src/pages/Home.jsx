@@ -15,7 +15,7 @@ const Home = () => {
   const heroSlides = [
     {
       image: "./photo-1486406146926-c627a92ad1ab.jpeg",
-      subtitle: "Campany Name",
+      subtitle: "Aliado Patrimonial",
       path: "#/corporativa/perfil",
       title: "Líderes en Préstamos Digitales",
       ctaText: "Conoce Más"
@@ -148,7 +148,7 @@ const Home = () => {
           />
           <WideCard align="center">
             <p style={{ marginBottom: '24px' }}>
-              <strong>Campany Name es </strong>
+              <strong>Aliado Patrimonial es </strong>
               <span style={{ color: theme.colors.accentOchre }}>pionera en la industria de préstamos digitales</span>
               , consolidándose como líder en el ecosistema Fintech en México y Estados Unidos.
             </p>

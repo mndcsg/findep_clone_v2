@@ -102,23 +102,15 @@ const Footer = () => {
         {/* Column 1: Brand */}
         <div style={styles.footerColumn}>
           <div style={{display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px'}}>
-            <div style={{
-              width: '28px',
-              height: '28px',
-              borderRadius: '6px',
-              backgroundColor: colors.accentGold,
-              color: colors.primary,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '16px',
-              fontWeight: 'bold'
-            }}>E</div>
-            <span style={{fontSize: '20px', fontWeight: '700', color: colors.white}}>EMPRESA</span>
+          <img src="./pic.jpg" alt="Logo" style={{
+  width: '50px',
+  height: '50px',
+  objectFit: 'contain',
+  borderRadius: '6px',
+            }} />
+            <span style={{fontSize: '20px', fontWeight: '700', color: colors.white}}>Aliado Patrimonial, S.A.P.I. de C.V. SOFOM, E.N.R.</span>
           </div>
-          <p style={{fontSize: '14px', color: colors.textMuted, lineHeight: '1.6', maxWidth: '280px'}}>
-            Comprometidos con la excelencia y el desarrollo sostenible desde 1985.
-          </p>
+        
         </div>
 
         {/* Column 2: Quick Links */}
@@ -140,17 +132,15 @@ const Footer = () => {
         {/* Column 3: Contact */}
         <div style={styles.footerColumn}>
           <h4 style={styles.footerTitle}>Contacto</h4>
-          <p style={styles.contactText}>Calle Principal 123<br/>Ciudad Empresarial<br/>CP 28001</p>
-          <p style={{...styles.contactText, color: colors.accentGold}}>info@empresa.com</p>
-          <p style={styles.contactText}>+34 912 345 678</p>
+          <p style={styles.contactText}>Avenida Ejército Nacional 676,interior Piso 4<br/>Colonia Polanco III Sección<br/>C.P.11540, Miguel Hidalgo, Ciudad de México</p>
         </div>
 
         {/* Column 4: Legal */}
         <div style={styles.footerColumn}>
           <h4 style={styles.footerTitle}>Legal</h4>
-          <a href="/privacidad" style={styles.footerLink} onMouseOver={(e) => e.currentTarget.style.color = colors.accentGold} onMouseOut={(e) => e.currentTarget.style.color = colors.textMuted}>Política de Privacidad</a>
-          <a href="/cookies" style={styles.footerLink} onMouseOver={(e) => e.currentTarget.style.color = colors.accentGold} onMouseOut={(e) => e.currentTarget.style.color = colors.textMuted}>Política de Cookies</a>
-          <a href="/terminos" style={styles.footerLink} onMouseOver={(e) => e.currentTarget.style.color = colors.accentGold} onMouseOut={(e) => e.currentTarget.style.color = colors.textMuted}>Términos de Uso</a>
+          <a href="#/" style={styles.footerLink} onMouseOver={(e) => e.currentTarget.style.color = colors.accentGold} onMouseOut={(e) => e.currentTarget.style.color = colors.textMuted}>Política de Privacidad</a>
+          <a href="#/" style={styles.footerLink} onMouseOver={(e) => e.currentTarget.style.color = colors.accentGold} onMouseOut={(e) => e.currentTarget.style.color = colors.textMuted}>Política de Cookies</a>
+          <a href="#/" style={styles.footerLink} onMouseOver={(e) => e.currentTarget.style.color = colors.accentGold} onMouseOut={(e) => e.currentTarget.style.color = colors.textMuted}>Términos de Uso</a>
         </div>
       </div>
 
