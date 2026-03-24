@@ -1,4 +1,3 @@
-// Header.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,31 +9,30 @@ const Header = () => {
 
   const menuItems = [
     {
-      label: "Conoce la Empresa",
+      label: "Sobre Nuestra Compañía",
       links: [
-        { name: "Trayectoria", url: "#/corporativa/historia" },
-        { name: "Perfil Institucional", url: "#/corporativa/perfil" }
+        { name: "Nuestra Historia", url: "#/corporativa/historia" },
+        { name: "Identidad Corporativa", url: "#/corporativa/perfil" }
       ]
     },
     {
-      label: "Estructura Directiva",
+      label: "Equipo de Gobierno",
       links: [
-        { name: "Alta Dirección", url: "#/gobierno/equipo-directivo" },
-
+        { name: "Liderazgo Ejecutivo", url: "#/gobierno/equipo-directivo" },
       ]
     },
     {
-      label: "Mercado de Capitales",
+      label: "Información Bursátil",
       links: [
-        { name: "Gráfica Histórica", url: "#/accion/grafica-historica" },
-        { name: "Información de Dividendos", url: "#/accion/precios-historicos" },
-        { name: "Cobertura de Analistas", url: "#/accion/analistas" }
+        { name: "Histórico de Cotización", url: "#/accion/grafica-historica" },
+        { name: "Dividendos y Rendimientos", url: "#/accion/precios-historicos" },
+        { name: "Análisis de Expertos", url: "#/accion/analistas" }
       ]
     },
     {
-      label: "Compromiso Social",
+      label: "Impacto Social",
       links: [
-        { name: "Responsabilidad Social", url: "#/responsabilidad-social" }
+        { name: "Nuestras Iniciativas", url: "#/responsabilidad-social" }
       ]
     }
   ];
@@ -48,7 +46,7 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Desktop Hover Logic - Independent for each item
+  // Desktop Hover Logic
   const handleMouseEnter = (index) => {
     setActiveDropdownIndex(index);
   };
@@ -94,7 +92,7 @@ const Header = () => {
       transition: 'all 0.3s ease',
     },
     headerContainer: {
-      maxWidth: '1600px',
+      maxWidth: '100%',
       margin: '0 auto',
       padding: '0 24px',
       height: '80px',
@@ -146,7 +144,7 @@ const Header = () => {
       cursor: 'pointer',
       position: 'relative',
     },
-    navLinkNoHref: {  // ← 新增：用于无链接的菜单项
+    navLinkNoHref: {
       color: colors.textDark,
       textDecoration: 'none',
       fontSize: '15px',
@@ -264,7 +262,6 @@ const Header = () => {
     }
   };
 
-  // Check screen size for mobile toggle visibility
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth <= 768);
@@ -274,139 +271,230 @@ const Header = () => {
   }, []);
 
   return (
-    <header style={styles.header}>
-      <div style={styles.headerContainer}>
-      <Link to="/" style={styles.logo}>
-        <img src="./pic.jpg" alt="Logo" style={{
-  width: '50px',
-  height: '50px',
-  objectFit: 'contain',
-  borderRadius: '6px',
-}} />
-          Aliado Patrimonial, S.A.P.I. de C.V. SOFOM, E.N.R.
-        </Link>
+  <header style={styles.header}>
+    {/* 顶部信息栏 */}
+    <div style={{ 
+      backgroundColor: colors.primary, 
+      color: colors.white, 
+      fontSize: '12px', 
+      padding: '6px 0',
+      textAlign: 'center'
+    }}>
+      <span>Aliado Patrimonial - Tu socio en crecimiento financiero</span>
+    </div>
 
-        {/* Desktop Navigation */}
-        <nav style={{...styles.navDesktop, display: isMobile ? 'none' : 'flex'}}>
-          {menuItems.map((item, index) => {
-            const isActive = activeDropdownIndex === index;
-            const hasLinks = item.links.length > 0;
-            
-            return (
-              <div 
-                key={index} 
-                style={styles.navItemWrapper}
-                onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-              >
-                {/* 修复：有子菜单时使用 span，无子菜单时使用 a 标签 */}
-                {hasLinks ? (
-                  <span
-                    style={{
-                      ...styles.navLinkNoHref,
-                      ...(isActive ? styles.navLinkActive : {})
-                    }}
-                  >
-                    {item.label}
-                    <span style={{marginLeft: '6px', fontSize: '10px', opacity: 0.7}}>▼</span>
-                  </span>
-                ) : (
-                  <a 
-                    href="/"
-                    style={{
-                      ...styles.navLink,
-                      ...(isActive ? styles.navLinkActive : {})
-                    }}
-                  >
-                    {item.label}
-                  </a>
-                )}
-                
-                {hasLinks && (
-                  <div style={{
-                    ...styles.dropdown,
-                    ...(isActive ? styles.dropdownVisible : {})
-                  }}>
-                    {item.links.map((link, linkIndex) => (
-                      <a
-                        key={linkIndex}
-                        href={link.url}
-                        style={styles.dropdownItem}
-                        onMouseOver={(e) => handleDropdownItemHover(e, true)}
-                        onMouseOut={(e) => handleDropdownItemHover(e, false)}
-                      >
-                        <span>{link.name}</span>
-                        <span style={{fontSize: '16px', opacity: 0.3}}>›</span>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button 
-          style={{...styles.mobileToggle, display: isMobile ? 'block' : 'none'}} 
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? '✕' : '☰'}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      {isMobile && (
-        <div style={styles.mobileMenu}>
-          {menuItems.map((item, index) => (
-            <div key={index} style={styles.mobileNavItem}>
-              <div 
-                style={styles.mobileNavLink}
-                onClick={() => item.links.length > 0 ? toggleMobileSubmenu(index) : null}
-              >
-                <span>{item.label}</span>
-                {item.links.length > 0 && (
+    <div style={styles.headerContainer}>
+      {/* 左侧导航栏 */}
+      <nav style={{ 
+        ...styles.navDesktop, 
+        display: isMobile ? 'none' : 'flex',
+        flex: 1,
+        justifyContent: 'flex-start'
+      }}>
+        {menuItems.map((item, index) => {
+          const isActive = activeDropdownIndex === index;
+          const hasLinks = item.links.length > 0;
+          
+          return (
+            <div 
+              key={index} 
+              style={styles.navItemWrapper}
+              onMouseEnter={() => handleMouseEnter(index)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {hasLinks ? (
+                <span
+                  style={{
+                    ...styles.navLinkNoHref,
+                    ...(isActive ? styles.navLinkActive : {})
+                  }}
+                >
+                  {item.label}
                   <span style={{
-                    fontSize: '12px', 
-                    transform: mobileSubmenuOpen === index ? 'rotate(180deg)' : 'rotate(0deg)', 
+                    marginLeft: '6px', 
+                    fontSize: '10px', 
+                    opacity: 0.7,
                     transition: 'transform 0.3s',
-                    color: colors.accentGold
-                  }}>
-                    ▼
-                  </span>
-                )}
-              </div>
+                    transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)'
+                  }}>▼</span>
+                </span>
+              ) : (
+                <a 
+                  href="/"
+                  style={{
+                    ...styles.navLink,
+                    ...(isActive ? styles.navLinkActive : {})
+                  }}
+                >
+                  {item.label}
+                </a>
+              )}
               
-              {item.links.length > 0 && (
-                <div style={styles.mobileSubmenu}>
+              {hasLinks && (
+                <div style={{
+                  ...styles.dropdown,
+                  ...(isActive ? styles.dropdownVisible : {})
+                }}>
                   {item.links.map((link, linkIndex) => (
                     <a
                       key={linkIndex}
                       href={link.url}
-                      style={styles.mobileSubItem}
-                      onClick={(e) => {
-                        e.currentTarget.style.borderLeftColor = colors.accentGold;
-                        e.currentTarget.style.color = colors.primary;
-                        e.currentTarget.style.fontWeight = 'bold';
-                      }}
-                      onMouseOut={(e) => {
-                         e.currentTarget.style.borderLeftColor = 'transparent';
-                         e.currentTarget.style.color = colors.textMuted;
-                         e.currentTarget.style.fontWeight = 'normal';
-                      }}
+                      style={styles.dropdownItem}
+                      onMouseOver={(e) => handleDropdownItemHover(e, true)}
+                      onMouseOut={(e) => handleDropdownItemHover(e, false)}
                     >
-                      {link.name}
+                      <span>{link.name}</span>
+                      <span style={{fontSize: '16px', opacity: 0.3}}>›</span>
                     </a>
                   ))}
                 </div>
               )}
             </div>
-          ))}
+          );
+        })}
+      </nav>
+
+      {/* 中间 Logo 区域 */}
+      <div style={{ 
+        display: 'flex', 
+        alignItems: 'center', 
+        gap: '12px',
+        position: 'absolute',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 1002
+      }}>
+        <Link to="/" style={styles.logo}>
+          <img 
+            src="./pic.jpg" 
+            alt="Logo" 
+            style={{
+              width: '50px',
+              height: '50px',
+              objectFit: 'contain',
+              borderRadius: '6px',
+            }} 
+          />
+          <span>Aliado Patrimonial</span>
+        </Link>
+      </div>
+
+      {/* 右侧地址区域 */}
+      <div style={{ 
+        display: isMobile ? 'none' : 'flex', 
+        alignItems: 'center', 
+        gap: '16px',
+        flex: 1,
+        justifyContent: 'flex-end'
+      }}>
+        <address style={{
+          fontSize: '12px',
+          color: colors.textMuted,
+          fontStyle: 'normal',
+          textAlign: 'right',
+          lineHeight: '1.4',
+          maxWidth: '280px'
+        }}>
+          Avenida Ejército Nacional 676,<br />
+          interior Piso 4, Colonia Polanco III<br />
+          Sección, C.P. 11540, Miguel Hidalgo,<br />
+          Ciudad de México
+        </address>
+      </div>
+
+      {/* Mobile Toggle */}
+      <button 
+        style={{...styles.mobileToggle, display: isMobile ? 'block' : 'none'}} 
+        onClick={toggleMobileMenu}
+        aria-label="Toggle menu"
+      >
+        {isMobileMenuOpen ? '✕' : '☰'}
+      </button>
+    </div>
+
+    {/* Mobile Menu */}
+    {isMobile && (
+      <div style={styles.mobileMenu}>
+        {menuItems.map((item, index) => (
+          <div key={index} style={styles.mobileNavItem}>
+            <div 
+              style={styles.mobileNavLink}
+              onClick={() => item.links.length > 0 ? toggleMobileSubmenu(index) : null}
+            >
+              <span>{item.label}</span>
+              {item.links.length > 0 && (
+                <span style={{
+                  fontSize: '12px', 
+                  transform: mobileSubmenuOpen === index ? 'rotate(180deg)' : 'rotate(0deg)', 
+                  transition: 'transform 0.3s',
+                  color: colors.accentGold
+                }}>
+                  ▼
+                </span>
+              )}
+            </div>
+            
+            {item.links.length > 0 && (
+              <div style={styles.mobileSubmenu}>
+                {item.links.map((link, linkIndex) => (
+                  <a
+                    key={linkIndex}
+                    href={link.url}
+                    style={styles.mobileSubItem}
+                    onClick={(e) => {
+                      e.currentTarget.style.borderLeftColor = colors.accentGold;
+                      e.currentTarget.style.color = colors.primary;
+                      e.currentTarget.style.fontWeight = 'bold';
+                    }}
+                    onMouseOut={(e) => {
+                       e.currentTarget.style.borderLeftColor = 'transparent';
+                       e.currentTarget.style.color = colors.textMuted;
+                       e.currentTarget.style.fontWeight = 'normal';
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+        
+        {/* 移动端地址信息 */}
+        <div style={{ padding: '16px 24px', backgroundColor: colors.background }}>
+          <address style={{
+            fontSize: '12px',
+            color: colors.textMuted,
+            fontStyle: 'normal',
+            lineHeight: '1.6'
+          }}>
+            <strong>Ubicación:</strong><br />
+            Avenida Ejército Nacional 676,<br />
+            Piso 4, Polanco III, C.P. 11540<br />
+            Ciudad de México
+          </address>
         </div>
-      )}
-    </header>
-  );
+
+        {/* 移动端联系按钮 */}
+        <div style={{ padding: '16px 24px' }}>
+          <button style={{
+            backgroundColor: colors.accentGold,
+            color: colors.white,
+            border: 'none',
+            padding: '12px 24px',
+            borderRadius: '6px',
+            fontSize: '14px',
+            fontWeight: '500',
+            cursor: 'pointer',
+            width: '100%'
+          }}>
+            Contacto
+          </button>
+        </div>
+      </div>
+    )}
+  </header>
+);
 };
 
 export default Header;
