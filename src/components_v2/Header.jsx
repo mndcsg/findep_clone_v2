@@ -97,8 +97,45 @@ const Header = () => {
       padding: '0 24px',
       height: '80px',
       display: 'flex',
+      flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'space-between',
+    },
+    // 左侧导航区域 - 70%
+    navSection: {
+      flex: '0 0 70%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+    },
+    // 右侧区域 - 30%（包含 Logo 和地址）
+    rightSection: {
+      flex: '0 0 30%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      gap: '20px',
+    },
+    // 右侧 Logo 样式
+    rightLogo: {
+      fontSize: '18px',
+      fontWeight: '700',
+      color: colors.primary,
+      textDecoration: 'none',
+      letterSpacing: '0.5px',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '8px',
+      zIndex: 1002,
+    },
+    // 右侧地址样式
+    rightAddress: {
+      fontSize: '11px',
+      color: colors.textMuted,
+      fontStyle: 'normal',
+      textAlign: 'right',
+      lineHeight: '1.4',
+      margin: 0,
     },
     logo: {
       fontSize: '24px',
@@ -270,7 +307,7 @@ const Header = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  return (
+return (
   <header style={styles.header}>
     {/* 顶部信息栏 */}
     <div style={{ 
@@ -284,121 +321,98 @@ const Header = () => {
     </div>
 
     <div style={styles.headerContainer}>
-      {/* 左侧导航栏 */}
-      <nav style={{ 
-        ...styles.navDesktop, 
-        display: isMobile ? 'none' : 'flex',
-        flex: 1,
-        justifyContent: 'flex-start'
-      }}>
-        {menuItems.map((item, index) => {
-          const isActive = activeDropdownIndex === index;
-          const hasLinks = item.links.length > 0;
-          
-          return (
-            <div 
-              key={index} 
-              style={styles.navItemWrapper}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              {hasLinks ? (
-                <span
-                  style={{
-                    ...styles.navLinkNoHref,
-                    ...(isActive ? styles.navLinkActive : {})
-                  }}
-                >
-                  {item.label}
-                  <span style={{
-                    marginLeft: '6px', 
-                    fontSize: '10px', 
-                    opacity: 0.7,
-                    transition: 'transform 0.3s',
-                    transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)'
-                  }}>▼</span>
-                </span>
-              ) : (
-                <a 
-                  href="/"
-                  style={{
-                    ...styles.navLink,
-                    ...(isActive ? styles.navLinkActive : {})
-                  }}
-                >
-                  {item.label}
-                </a>
-              )}
-              
-              {hasLinks && (
-                <div style={{
-                  ...styles.dropdown,
-                  ...(isActive ? styles.dropdownVisible : {})
-                }}>
-                  {item.links.map((link, linkIndex) => (
-                    <a
-                      key={linkIndex}
-                      href={link.url}
-                      style={styles.dropdownItem}
-                      onMouseOver={(e) => handleDropdownItemHover(e, true)}
-                      onMouseOut={(e) => handleDropdownItemHover(e, false)}
-                    >
-                      <span>{link.name}</span>
-                      <span style={{fontSize: '16px', opacity: 0.3}}>›</span>
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </nav>
+      {/* 左侧导航栏 - 70% */}
+      <div style={styles.navSection}>
+        <nav style={{ 
+          ...styles.navDesktop, 
+          display: isMobile ? 'none' : 'flex'
+        }}>
+          {menuItems.map((item, index) => {
+            const isActive = activeDropdownIndex === index;
+            const hasLinks = item.links.length > 0;
+            
+            return (
+              <div 
+                key={index} 
+                style={styles.navItemWrapper}
+                onMouseEnter={() => handleMouseEnter(index)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {hasLinks ? (
+                  <span
+                    style={{
+                      ...styles.navLinkNoHref,
+                      ...(isActive ? styles.navLinkActive : {})
+                    }}
+                  >
+                    {item.label}
+                    <span style={{
+                      marginLeft: '6px', 
+                      fontSize: '10px', 
+                      opacity: 0.7,
+                      transition: 'transform 0.3s',
+                      transform: isActive ? 'rotate(180deg)' : 'rotate(0deg)'
+                    }}>▼</span>
+                  </span>
+                ) : (
+                  <a 
+                    href="/"
+                    style={{
+                      ...styles.navLink,
+                      ...(isActive ? styles.navLinkActive : {})
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                )}
+                
+                {hasLinks && (
+                  <div style={{
+                    ...styles.dropdown,
+                    ...(isActive ? styles.dropdownVisible : {})
+                  }}>
+                    {item.links.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href={link.url}
+                        style={styles.dropdownItem}
+                        onMouseOver={(e) => handleDropdownItemHover(e, true)}
+                        onMouseOut={(e) => handleDropdownItemHover(e, false)}
+                      >
+                        <span>{link.name}</span>
+                        <span style={{fontSize: '16px', opacity: 0.3}}>›</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </nav>
+      </div>
 
-      {/* 中间 Logo 区域 */}
-      <div style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        gap: '12px',
-        position: 'absolute',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 1002
-      }}>
-        <Link to="/" style={styles.logo}>
+      {/* 右侧区域 - 30%（Logo + 地址）*/}
+      <div style={styles.rightSection}>
+        {/* Logo */}
+        <Link to="/" style={styles.rightLogo}>
           <img 
             src="./pic.jpg" 
             alt="Logo" 
             style={{
-              width: '50px',
-              height: '50px',
+              width: '45px',
+              height: '45px',
               objectFit: 'contain',
               borderRadius: '6px',
             }} 
           />
           <span>Aliado Patrimonial</span>
         </Link>
-      </div>
 
-      {/* 右侧地址区域 */}
-      <div style={{ 
-        display: isMobile ? 'none' : 'flex', 
-        alignItems: 'center', 
-        gap: '16px',
-        flex: 1,
-        justifyContent: 'flex-end'
-      }}>
-        <address style={{
-          fontSize: '12px',
-          color: colors.textMuted,
-          fontStyle: 'normal',
-          textAlign: 'right',
-          lineHeight: '1.4',
-          maxWidth: '280px'
-        }}>
-          Avenida Ejército Nacional 676,<br />
-          interior Piso 4, Colonia Polanco III<br />
-          Sección, C.P. 11540, Miguel Hidalgo,<br />
-          Ciudad de México
+        {/* 地址 */}
+        <address style={styles.rightAddress}>
+          Av. Ejército Nacional 676,<br />
+          Piso 4, Polanco III<br />
+          C.P. 11540, CDMX
         </address>
       </div>
 
@@ -412,7 +426,7 @@ const Header = () => {
       </button>
     </div>
 
-    {/* Mobile Menu */}
+    {/* Mobile Menu - 保持不变 */}
     {isMobile && (
       <div style={styles.mobileMenu}>
         {menuItems.map((item, index) => (
